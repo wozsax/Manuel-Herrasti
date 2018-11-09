@@ -1,1 +1,13 @@
-anikdfbfbsdf
+public class TweetMessage {
+	public static void main(String[] args) throws Exception {
+		Twitter twitter = TwitterFactory.getSingleton();
+		twitter.setOAuthConsumer("[consumer key]", "[consumer secret]");
+		AccessToken accessToken = new AccessToken(“[token key]",  "[token secret]");
+		twitter.setOAuthAccessToken(accessToken);
+		Query query = new Query(“text to search for");
+	        	QueryResult result = twitter.search(query);
+		for (Status status : result.getTweets()) {
+			System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+		}
+	}
+}
