@@ -1,3 +1,6 @@
+import twitter4j.*;
+import twitter4j.auth.*;
+
 public class TweetMessage {
 	public static void main(String[] args) throws Exception {
 		Twitter twitter = TwitterFactory.getSingleton();
